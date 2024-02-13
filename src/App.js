@@ -1,22 +1,15 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Greeting from './Greeting';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Greeting from './components/Greeting';
 
-const Home = () => (
-  <div>
-    <h2>Home</h2>
-    <p>Welcome to our home page.</p>
-    <Link to="/greeting">Greeting Message</Link>
-  </div>
-);
-
-const App = () => (
-  <Router>
-    <div>
-      <Route path="/" exact component={Home} />
-      <Route path="/greeting" component={Greeting} />
-    </div>
-  </Router>
-);
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Greeting />} />
+      </Routes>
+    </Router>
+  );
+}
 
 export default App;
